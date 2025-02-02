@@ -51,7 +51,7 @@ public class LoginForm extends JFrame implements ActionListener {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 
-            String query = "SELECT name, account_number FROM student WHERE email = ? AND password = ?";
+            String query = "SELECT name, account_number, password FROM student WHERE email = ? AND password = ?";
             PreparedStatement ps = con.prepareStatement(query);
             ps.setString(1, email);
             ps.setString(2, password);
@@ -60,7 +60,8 @@ public class LoginForm extends JFrame implements ActionListener {
             if (rs.next()) {
                 String name = rs.getString("name");
                 String accountNumber = rs.getString("account_number");
-                new HomePage(name, accountNumber);
+                String transactionPin = rs.getString("password");
+                new HomePage(name, accountNumber, transactionPin);
                 dispose();
             } else {
                 JOptionPane.showMessageDialog(this, "Invalid email or password.");
