@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2025 at 12:01 AM
+-- Generation Time: Feb 02, 2025 at 04:04 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -33,18 +33,22 @@ CREATE TABLE `student` (
   `age` int(11) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `account_number` varchar(50) NOT NULL
+  `account_number` varchar(50) NOT NULL,
+  `account_balance` float DEFAULT 1500
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `student`
 --
 
-INSERT INTO `student` (`id`, `name`, `age`, `email`, `password`, `account_number`) VALUES
-(1, 'ife', 12, 'ifeadeniyi8@gmail.com', '1234', ''),
-(3, 'Daniel', 14, 'ifeadeniyi@gmail.com', '1234', '202569711868'),
-(4, 'femi', 23, 'adeniyu@gmail.com', '1234', '202537630769'),
-(5, 'clement', 16, 'temi@gmail.com', '1234', '202586306452');
+INSERT INTO `student` (`id`, `name`, `age`, `email`, `password`, `account_number`, `account_balance`) VALUES
+(1, 'ife', 12, 'ifeadeniyi8@gmail.com', '1234', '', 1500),
+(3, 'Daniel', 14, 'ifeadeniyi@gmail.com', '1234', '202569711868', 47400),
+(4, 'femi', 23, 'adeniyu@gmail.com', '1234', '202537630769', 1500),
+(5, 'clement', 16, 'temi@gmail.com', '1234', '202586306452', 11500),
+(6, 'Adepoju Majeed', 26, 'inlove2027@gmail.com', '12345678', '20252988331', 1500),
+(7, 'heyyo', 95, 'blehh@gmail.com', 'morpams', '202567158487', 1600),
+(8, 'heyyo', 95, 'irumole@gmail.com', 'iru', '202531446125', 1500);
 
 --
 -- Indexes for dumped tables
@@ -66,7 +70,7 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
